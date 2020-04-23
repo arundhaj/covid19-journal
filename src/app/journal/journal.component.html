@@ -1,0 +1,31 @@
+<div class="journal-container" fxLayout="column" fxLayoutAlign="start stretch">
+    <div fxFlex=4 class="journal-header">
+      COVID-19 Journal <span class="journal-sub-header">Monitor your suspicious events and track it (data stored locally only)</span> 
+    </div>
+    <ul class='event-legend'>
+      <li><span class="safe-zone"></span>Safe Zone - prior to 14 days window</li>
+      <li><span class="watch-zone"></span>Watch Zone - within 14 days window</li>
+    </ul>
+    <!-- <div class="journal-config">
+      <div class="journal-config">
+        <button mat-raised-button color="primary" (click)="addEvent(null)">Add Event</button>
+      </div>
+      <mat-form-field class="example-full-width">
+        <mat-label>Safe Window Period</mat-label>
+        <input name="safeWindowDays" type="number" matInput placeholder="Safe Window Period" [(ngModel)]="safeWindowDays" (ngModelChange)="safeWindowDaysChanged()">
+      </mat-form-field>      
+    </div> -->
+    <div fxFlex class="journal-content">
+        <full-calendar #calendar 
+            defaultView="dayGridMonth"
+            [height]="'parent'"
+            editable=true
+            eventLimit=true
+            deepChangeDetection=true
+            [plugins]="calendarPlugins"
+            [events]="calendarEvents"
+            (dayRender)="dayRender($event)"
+            (dateClick)="addEvent($event)"
+            (eventClick)="editEvent($event)"></full-calendar>
+    </div>
+</div>

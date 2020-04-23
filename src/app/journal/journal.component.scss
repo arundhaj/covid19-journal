@@ -1,0 +1,48 @@
+.journal-container {
+    height: 100%;
+  
+    button {
+        margin-right: 5px;
+    }
+}
+
+.journal-header {
+    padding-left: 10px;
+    background-color: #2c498d;
+    color: white;
+    font-size: 20px;
+    line-height: 1.7;
+
+    .journal-sub-header {
+        font-size: 14px;
+        font-style: italic;
+    }
+}
+
+.journal-content {
+    margin: 10px;
+}
+
+.journal-config {
+    padding: 10px;
+}
+
+.event-legend {
+    list-style: none;
+    span {
+        float: left;
+        height: 16px;
+        width: 30px;
+        margin-right: 10px;
+
+        &.safe-zone {
+            border: 1px solid green;
+            // background-color: green;
+        }
+
+        &.watch-zone {
+            // background-color: yellow;
+            border: 1px solid orange;
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>{{ data.IsAdd ? 'Add' : 'Edit' }} Event</h1>
+<div mat-dialog-content>
+    <mat-form-field class="event-title">
+        <mat-label>Event Title</mat-label>
+        <input matInput [(ngModel)]="data.Event.title">
+    </mat-form-field>
+    <div class="event-date">
+        <span class="material-icons">date_range</span>
+        {{ data.Event.date | date }}
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-raised-button color="primary" (click)="save()">
+        <span class="material-icons">{{ data.IsAdd ? 'add' : 'save' }}</span>
+        {{ data.IsAdd ? 'Add' : 'Update' }}
+    </button>
+    <button *ngIf="!data.IsAdd" mat-raised-button color="warn" (click)="delete()">
+        <span class="material-icons">delete</span>
+        Delete
+    </button>
+    <button mat-raised-button (click)="cancel()">
+        <span class="material-icons">close</span>
+        Cancel
+    </button>
+</div>
